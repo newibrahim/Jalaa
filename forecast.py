@@ -8,5 +8,5 @@ weather = location.get_weather()
 
 temp = weather.get_temperature('fahrenheit')
 header = "\n\tNEW YORK 3-DAY FORECAST:\n\n\tDay\t\tHigh\tLow\tConditions\n\t---\t\t----\t---\t----------\n"
-forecast = "\t" + calendar.day_name[datetime.datetime.today().weekday()] + "\t" + str(temp.get('temp_max')) + "F" + "\t" + str(temp.get('temp_min')) + "F" + "\t" + calendar.day_name[datetime.datetime.today().weekday() + 1] + "\n\t" + calendar.day_name[datetime.datetime.today().weekday() + 2] + "\t\t" + str(temp.get('temp_max')) + "F" + "\t" + str(temp.get('temp_min')) + "F" + "\tSunny\n\tTuesday\t\t" + str(temp.get('temp_max')) + "F" + "\t50F\tCloudy\n"
+forecast = "\t" + str(datetime.date.today() + datetime.timedelta(days=0)) + "\t" + str(temp.get('temp_max')) + "F" + "\t" + str(temp.get('temp_min')) + "F" + "\t" + str(datetime.date.today() + datetime.timedelta(days=1)) + "\n\t" + str(datetime.date.today() + datetime.timedelta(days=2))+ "\t\t" + str(temp.get('temp_max')) + "F" + "\t" + str(temp.get('temp_min')) + "F" + "\tSunny\n\tTuesday\t\t" + str(temp.get('temp_max')) + "F" + "\t50F\tCloudy\n"
 print(header + forecast)
